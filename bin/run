@@ -1,0 +1,6 @@
+#!/bin/bash
+/usr/bin/env java -server $DATOMIC_JAVA_OPTS -Xmx1g -cp `bin/classpath` clojure.main -i "bin/bridge.clj" "$@"
+
+
+
+
