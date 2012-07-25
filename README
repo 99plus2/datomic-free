@@ -11,7 +11,7 @@ Install in your local maven repos:
 Replace DATOMIC_VERSION in the snippet below with the contents of the 
 VERSION file at the root of this distribution.
 
-mvn install:install-file -DgroupId=com.datomic -DartifactId=datomic -Dfile=datomic-${DATOMIC-VERSION}.jar -DpomFile=pom.xml
+mvn install:install-file -DgroupId=com.datomic -DartifactId=datomic-free -Dfile=datomic-free-${DATOMIC-VERSION}.jar -DpomFile=pom.xml
 
 ====================================
 Using from maven:
@@ -22,7 +22,7 @@ dependencies section of your pom.xml:
 
     <dependency>
       <groupId>com.datomic</groupId>
-      <artifactId>datomic</artifactId>
+      <artifactId>datomic-free</artifactId>
       <version>${DATOMIC_VERSION}</version>
     </dependency>
 
@@ -33,7 +33,7 @@ Replace DATOMIC_VERSION in the snippet below with the contents of the
 VERSION file at the root of this distribution. Then add the snippet to the 
 dependencies section of your project.clj:
 
-   [com.datomic/datomic "${DATOMIC_VERSION}"]
+   [com.datomic/datomic-free "${DATOMIC_VERSION}"]
 
 
 
