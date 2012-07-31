@@ -8,10 +8,10 @@
 (def commands
   "Map of command names to descriptions of command arguments."
    {'create-dynamodb-system
-    {:f 'datomic.ddb-values/create-system-command
+    {:f 'datomic.provisioning.aws/create-system-command
      :named #{{:long-name :table-name :required true :doc "dynamodb table name"}
-              {:long-name :read-capacity :required false :default 10 :coerce #(Integer. %) :doc "read capacity"}
-              {:long-name :write-capacity :required false :default 5 :coerce #(Integer. %) :doc "write capacity"}}
+              {:long-name :read-capacity :required false :default 10 :coerce #(Long. %) :doc "read capacity"}
+              {:long-name :write-capacity :required false :default 5 :coerce #(Long. %) :doc "write capacity"}}
      :positional [:table-name :read-capacity :write-capacity]}
     'create-cf-template
     {:f 'datomic.provisioning.aws/create-cf-template
