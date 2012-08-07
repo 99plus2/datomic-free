@@ -49,15 +49,6 @@
     {:f 'datomic.iam/assign-transactor-metrics-user-command
      :named #{{:long-name :user-name :required true :doc "name of transactor metrics user"}}
      :positional [:user-name]}
-    'install-license-key
-    {:f 'datomic.license/install-license-key
-     :named #{{:long-name :uri :required true :doc "URI with write access to storage"}
-              {:long-name :file :required true :doc "license key file"}}
-     :positional [:file :uri]}
-    'uninstall-license-key
-    {:f 'datomic.license/uninstall-license-key
-     :named #{{:long-name :uri :required true :doc "URI with write access to storage"}}
-     :positional [:uri]}
     'dynamo-r-policy
     {:f 'datomic.iam/dynamo-r-policy-command
      :named #{{:long-name :account-id :required true :doc "AWS account id"}
