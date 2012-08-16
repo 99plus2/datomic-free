@@ -11,7 +11,7 @@
  <groupId>com.datomic</groupId>
  <artifactId>datomic-free</artifactId>
  <name>datomic-free</name>
- <version>0.8.3397</version>
+ <version>0.8.3423</version>
  <organization>
   <name>Metadata Partners, LLC</name>
   <url>http://datomic.com</url>
@@ -97,7 +97,7 @@
   <dependency>
    <groupId>com.google.guava</groupId>
    <artifactId>guava</artifactId>
-   <version>r09</version>
+   <version>12.0.1</version>
   </dependency>
   <dependency>
    <groupId>spy</groupId>
