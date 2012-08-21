@@ -23,6 +23,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -33,7 +34,6 @@ import datomic.Entity;
 import datomic.Connection;
 import datomic.Database;
 import datomic.Peer;
-import datomic.TxReport;
 import datomic.Util;
 
 public class GettingStarted {
@@ -486,14 +486,14 @@ public class GettingStarted {
 
 	    System.out.println("Poll queue for transaction notification, print data that was added...");
 
-	    TxReport report = (TxReport) queue.poll();
-	    results = Peer.q("[:find ?e ?aname ?v " +
-			     ":in $ [[?e ?a ?v]] " +
+	    Map report = (Map) queue.poll();
+	    results = Peer.q("[:find ?e ?aname ?v ?added" +
+			     ":in $ [[?e ?a ?v _ ?added]] " +
 			     ":where " +
-			     "[?e ?a ?v]" +
+			     "[?e ?a ?v _ ?added]" +
 			     "[?a :db/ident ?aname]]",
-			     report.dbAfter(),
-			     report.txData());
+			     report.get(Connection.DB_AFTER),
+			     report.get(Connection.TX_DATA));
 	    for (Object result : results) System.out.println(result);
 	}
 	catch (Exception e) {

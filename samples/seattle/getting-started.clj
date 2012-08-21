@@ -332,12 +332,13 @@
 @(d/transact conn [{:db/id (d/tempid :db.part/user)
                       :community/name "Easton"}])
 
-(let [report (.poll queue)]
-  (pprint (seq (q '[:find ?e ?aname ?v
-                        :in $ [[?e ?a ?v]]
-                        :where
-                        [?e ?a ?v]
-                        [?a :db/ident ?aname]]
-                      (.dbAfter report)
-                      (.txData report)))))
+(when-let [report (.poll queue)]
+  (pprint (seq (q '[:find ?e ?aname ?v ?added
+                    :in $ [[?e ?a ?v _ ?added]]
+                    :where
+                    [?e ?a ?v _ ?added]
+                    [?a :db/ident ?aname]]
+                  (:db-after report)
+                  (:tx-data report)))))
+
 

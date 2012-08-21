@@ -29,7 +29,6 @@ import datomic.Connection;
 import datomic.Database;
 import datomic.Datom;
 import datomic.Peer;
-import datomic.TxReport;
 import datomic.Util;
 
 import java.io.*;
