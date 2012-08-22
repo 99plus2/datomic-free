@@ -2,6 +2,11 @@
 
 # Changes to Datomic
 
+## Changes in 0.8.3438
+
+* Fixed bug in :db/txInstant that prevented backdating before db was
+created.
+
 ## Changes in 0.8.3435
 
 * new API: `Peer.resolveTempid` provides the actual database ids
