@@ -2,6 +2,22 @@
 
 # Changes to Datomic
 
+## Changes in 0.8.3460
+
+* Fixed bug where peers could continue to interact with connections to
+  deleted databases.
+
+* Fixed query bug where constants in queries were not correctly joined
+  with answers.
+
+* Fixed directory structure in JAR file format, which was causing
+  problems for some tools.
+
+* Report serialization errors back to data function callers, rather
+  than make them wait for transaction timeout.
+
+* Better error messages for some common URI misspellings.
+
 ## Changes in 0.8.3438
 
 * Fixed bug in :db/txInstant that prevented backdating before db was

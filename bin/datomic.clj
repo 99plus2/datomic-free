@@ -134,16 +134,20 @@
     (if-let [{:keys [f named positional vararg]} (get commands command)]
       (let [args (cli/parse-or-exit! command cli-args named positional vararg)]
         (try
-          (if-let [result (common/require-and-run f args)]
+          (when-let [result (common/require-and-run f args)]
             (println result))
-          ;; (println ((ns-resolve 'datomic command) args))
           (catch com.amazonaws.AmazonServiceException ase
             (println "*** ERROR"
                      (.getServiceName ase)
                      (.getErrorCode ase)
-                     (.getMessage ase)))
+                     (.getMessage ase))
+            (cli/fail (.getMessage ase)))
           (catch com.amazonaws.AmazonClientException ace
-            (println "*** ERROR" (.getMessage ace))))
+            (println "*** ERROR" (.getMessage ace))
+            (cli/fail (.getMessage ace)))
+          (catch Throwable t
+            (.printStackTrace t)
+            (cli/fail (.getMessage t))))
         (when @cli/exit-after-command
           (System/exit (if @cli/failed -1 0))))
       (do
