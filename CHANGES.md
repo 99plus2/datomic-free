@@ -2,6 +2,12 @@
 
 # Changes to Datomic
 
+## Changes in 0.8.3470
+
+* Fixed bug where some recursive queries return incorrect results.
+
+* Fixed bug in command-line entry point for restoring from S3.
+
 ## Changes in 0.8.3460
 
 * Fixed bug where peers could continue to interact with connections to
