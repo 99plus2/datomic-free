@@ -2,6 +2,11 @@
 
 # Changes to Datomic
 
+## Changes in 0.8.3479
+
+* new API: `Entity.touch` touches all attributes of an entity, and any
+  component entities recursively.
+
 ## Changes in 0.8.3470
 
 * Fixed bug where some recursive queries return incorrect results.
