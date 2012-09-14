@@ -2,6 +2,13 @@
 
 # Changes to Datomic
 
+## Changes in 0.8.3520
+
+* Fixed but that prevented catalog page from loading on REST service when 
+  running against a persistent storage.
+
+* Enhancements to REST documentation.
+
 ## Changes in 0.8.3511
 
 * The REST service is now its own documentation. Just point a browser at the root
