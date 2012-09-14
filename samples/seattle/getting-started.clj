@@ -299,11 +299,11 @@
 
 ;; make a new partition
 @(d/transact conn [{:db/id (d/tempid :db.part/db)
-                      :db/ident :events
+                      :db/ident :communities
                       :db.install/_partition :db.part/db}])
 
 ;; make a new community
-@(d/transact conn [{:db/id (d/tempid :db.part/user)
+@(d/transact conn [{:db/id (d/tempid :communities)
                       :community/name "Easton"}])
 
 ;; update data for a community
@@ -329,7 +329,7 @@
 ;; get transaction report queue, add new community again
 (def queue (d/tx-report-queue conn))
 
-@(d/transact conn [{:db/id (d/tempid :db.part/user)
+@(d/transact conn [{:db/id (d/tempid :communities)
                       :community/name "Easton"}])
 
 (when-let [report (.poll queue)]

@@ -2,6 +2,19 @@
 
 # Changes to Datomic
 
+## Changes in 0.8.3511
+
+* The REST service is now its own documentation. Just point a browser at the root
+  of the server:port on which you started the service. Note that the "web app"
+  that results *is* the service. It is not an app built
+  on the service, nor a set of documentation pages about the
+  service. The URIs, query params, and POST data are the same ones you
+  will use when accessing the service programmatically.
+
+## Changes in 0.8.3488
+
+* Initial version of REST service.
+
 ## Changes in 0.8.3479
 
 * new API: `Entity.touch` touches all attributes of an entity, and any

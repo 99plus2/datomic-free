@@ -421,7 +421,7 @@ public class GettingStarted {
 	    System.out.println("Make a new partition...");
 
 	    List partition_tx = Util.list(Util.map("db/id", Peer.tempid(":db.part/db"),
-						   "db/ident", ":events",
+						   "db/ident", ":communities",
 						   "db.install/_partition", "db.part/db"));
 	    txResult = conn.transact(partition_tx).get();
 	    System.out.println(txResult);
@@ -431,7 +431,7 @@ public class GettingStarted {
 
 	    System.out.println("Make a new community...");
 
-	    List add_community_tx = Util.list(Util.map(":db/id", Peer.tempid(":db.part/user"),
+	    List add_community_tx = Util.list(Util.map(":db/id", Peer.tempid(":communities"),
 						       ":community/name", "Easton"));
 	    txResult = conn.transact(add_community_tx).get();
 	    System.out.println(txResult);
@@ -478,7 +478,7 @@ public class GettingStarted {
 
 	    Queue queue = conn.txReportQueue();   
 
-	    add_community_tx = Util.list(Util.map(":db/id", Peer.tempid(":db.part/user"),
+	    add_community_tx = Util.list(Util.map(":db/id", Peer.tempid(":communities"),
 						  ":community/name", "Easton"));
 
 	    txResult = conn.transact(add_community_tx).get();
