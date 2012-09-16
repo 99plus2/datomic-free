@@ -2,6 +2,11 @@
 
 # Changes to Datomic
 
+## Changes in 0.8.3524
+
+* Fixed bug that caused temporary ids to read incorrectly in
+  transaction functions, causing transactions to fail.
+
 ## Changes in 0.8.3520
 
 * Fixed but that prevented catalog page from loading on REST service when 
