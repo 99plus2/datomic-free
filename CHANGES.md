@@ -2,6 +2,13 @@
 
 # Changes to Datomic
 
+## Changes in 0.8.3538
+
+* Fixed bug where variables bound by a query :in clause were not seen
+  as bound inside rules.
+
+* Added `invoke` API for invoking database functions.
+
 ## Changes in 0.8.3524
 
 * Fixed bug that caused temporary ids to read incorrectly in
