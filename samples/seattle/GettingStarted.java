@@ -1,6 +1,5 @@
-/*
- * NEED NEW HEADER and copyright
- */
+// Copyright (c) Metadata Partners, LLC.
+// All rights reserved.
 
 // This file contains code examples for getting-started.html. They are
 // written in clojure, for use with Datomic's interactive repl. You can
@@ -399,7 +398,8 @@ public class GettingStarted {
 	    List new_data_tx = (List) Util.readAll(data_rdr).get(0);
 
 	    System.out.println("\nFind all communities if new data is loaded...");
-	    Database db_if_new_data = conn.db().with(new_data_tx);
+            Map report = conn.db().with(new_data_tx);
+	    Database db_if_new_data = (Database) report.get(Connection.DB_AFTER);
 	    System.out.println(Peer.q("[:find ?c :where [?c :community/name]]", db_if_new_data).size());
 
 	    System.out.println("\nFind all communities currently in database...");
@@ -486,7 +486,7 @@ public class GettingStarted {
 
 	    System.out.println("Poll queue for transaction notification, print data that was added...");
 
-	    Map report = (Map) queue.poll();
+	    report = (Map) queue.poll();
 	    results = Peer.q("[:find ?e ?aname ?v ?added" +
 			     ":in $ [[?e ?a ?v _ ?added]] " +
 			     ":where " +

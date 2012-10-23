@@ -280,7 +280,7 @@
 (def new-data-tx (read-string (slurp "samples/seattle/seattle-data1.dtm")))
 
 ;; find all communities if new data is loaded
-(let [db-if-new-data (-> conn db (d/with new-data-tx))]
+(let [db-if-new-data (-> conn db (d/with new-data-tx) :db-after)]
   (println (count (seq (q communities-query db-if-new-data)))))
 
 ;; find all communities currently in database

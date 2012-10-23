@@ -2,6 +2,25 @@
 
 # Changes to Datomic
 
+## Changed in 0.8.3561
+
+* Breaking change: db.with() now returns a map like the map returned
+  from Connection.transact().
+
+* Incompatible and unsupported schema changes now throw exceptions.
+
+* Better error messages when calling query with bad or missing inputs.
+
+* Documented system properties.
+
+## Changes in 0.8.3551
+
+* Fixes to alpha aggregation functions.
+
+## Changes in 0.8.3546
+
+* Alpha support for aggregation functions in query.
+
 ## Changes in 0.8.3538
 
 * Fixed bug where variables bound by a query :in clause were not seen
