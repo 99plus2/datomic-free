@@ -9,10 +9,11 @@
   "Map of command names to descriptions of command arguments."
    {'create-dynamodb-system
     {:f 'datomic.provisioning.aws/create-system-command
-     :named #{{:long-name :table-name :required true :doc "dynamodb table name"}
+     :named #{{:long-name :region :required true :doc "AWS region for DynamoDB table"}
+              {:long-name :table-name :required true :doc "DynamoDB table name"}
               {:long-name :read-capacity :required false :default 10 :coerce #(Long. %) :doc "read capacity"}
               {:long-name :write-capacity :required false :default 5 :coerce #(Long. %) :doc "write capacity"}}
-     :positional [:table-name :read-capacity :write-capacity]}
+     :positional [:region :table-name :read-capacity :write-capacity]}
     'create-cf-template
     {:f 'datomic.provisioning.aws/create-cf-template
      :named #{{:long-name :ddb-properties :required true :doc "DynamoDB properties file"}

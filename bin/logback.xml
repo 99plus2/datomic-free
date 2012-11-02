@@ -31,6 +31,8 @@
   <logger name="com.amazonaws.request" level="WARN"/>
   <logger name="sun.rmi" level="INFO"/> 
   <logger name="net.spy.memcached" level="INFO"/>
+  <logger name="com.couchbase.client" level="INFO"/>
+  <logger name="org.apache.zookeeper" level="INFO"/>
 
   <root level="debug">
     <appender-ref ref="MAIN"/>

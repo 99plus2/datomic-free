@@ -11,7 +11,7 @@
  <groupId>com.datomic</groupId>
  <artifactId>datomic-free</artifactId>
  <name>datomic-free</name>
- <version>0.8.3561</version>
+ <version>0.8.3591</version>
  <organization>
   <name>Metadata Partners, LLC</name>
   <url>http://datomic.com</url>
@@ -59,6 +59,10 @@
     <exclusion>
      <groupId>commons-logging</groupId>
      <artifactId>commons-logging</artifactId>
+    </exclusion>
+    <exclusion>
+     <groupId>commons-codec</groupId>
+     <artifactId>commons-codec</artifactId>
     </exclusion>
    </exclusions>
   </dependency>
@@ -330,6 +334,16 @@
   <repository>
    <id>jline-releases</id>
    <url>http://jline.sourceforge.net/m2repo</url>
+   <releases>
+    <enabled>true</enabled>
+   </releases>
+   <snapshots>
+    <enabled>false</enabled>
+   </snapshots>
+  </repository>
+  <repository>
+   <id>couchbase-client</id>
+   <url>http://files.couchbase.com/maven2</url>
    <releases>
     <enabled>true</enabled>
    </releases>

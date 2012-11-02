@@ -2,6 +2,28 @@
 
 # Changes to Datomic
 
+## Changed in 0.8.3591
+
+* Preliminary support for Couchbase and Riak storages.
+
+* Breaking change: DynamoDB storage is now region-aware. URIs
+  include the AWS region as a first component. The transactor
+  properties file has a new mandatory property `aws-dynamodb-region`.
+
+* Breaking change: CloudWatch monitoring is now region-aware. If using
+  CloudWatch, you must set `aws-cloudwatch-region` in transactor
+  properties.
+
+* Transactions now return a datomic.ListenableFuture, allowing a
+  callback on transaction completion.
+
+* Fixed bug in the command line entry point for restoring a database,
+  which was defaulting to the most ancient backup instead of thre most
+  recent.
+
+* Fixed bug that prevented restoring to a `dev:` or `free:` storage in
+  some situations.
+
 ## Changed in 0.8.3561
 
 * Breaking change: db.with() now returns a map like the map returned
