@@ -2,6 +2,18 @@
 
 # Changes to Datomic
 
+## Changed in 0.8.3595
+
+* Fixed bug that prevented building queries from Java data.
+
+* Transactor AMIs are now available in all AWS regions that support
+  DynamoDB: us-east-1, us-west-1, us-west-2, eu-west-1,
+  ap-northeast-1. and ap-southeast-1.
+
+* Breaking change: CloudFormation properties file has a new required
+  key `aws-region`, allowing you to select the AWS region where a
+  transactor will run.
+
 ## Changed in 0.8.3591
 
 * Preliminary support for Couchbase and Riak storages.

@@ -68,13 +68,15 @@
      :positional [:bucket-name]}
     'create-cf-stack
     {:f 'datomic.cloudformation/create-stack-command
-     :named #{{:long-name :stack-name :required true :doc "name of new cloud formation stack"}
+     :named #{{:long-name :region :required true :doc "AWS region"}
+              {:long-name :stack-name :required true :doc "name of new cloud formation stack"}
               {:long-name :template-file :required true :doc "name of template file for new stack"}}
-     :positional [:stack-name :template-file]}
+     :positional [:region :stack-name :template-file]}
     'delete-cf-stack
     {:f 'datomic.cloudformation/delete-stack-command
-     :named #{{:long-name :stack-name :required true :doc "name of cloud formation stack to delete"}}
-     :positional [:stack-name]}
+     :named #{{:long-name :region :required true :doc "AWS region"}
+              {:long-name :stack-name :required true :doc "name of cloud formation stack to delete"}}
+     :positional [:region :stack-name]}
     'ec2-authorize-security-group-ingress
     {:f 'datomic.ec2/authorize-security-group-ingress-command
      :named #{{:long-name :group-name :required true :doc "name of security group"}
