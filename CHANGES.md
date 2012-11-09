@@ -2,6 +2,14 @@
 
 # Changes to Datomic
 
+## Changed in 0.8.3599
+
+* Fixed "No suitable driver" error with dev: and free: protocols in
+  some versions of Tomcat.
+
+* Updated bin/datomic `delete-cf-stack` command to work with
+  multiregion AWS support.
+
 ## Changed in 0.8.3595
 
 * Fixed bug that prevented building queries from Java data.
