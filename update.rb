@@ -123,4 +123,10 @@ def update_latest_ref
   sha
 end
 
+def git_push
+  system "git push origin latest"
+  system "git push --tags"
+end
+
 puts update_latest_ref
+git_push
