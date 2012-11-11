@@ -3,5 +3,5 @@
 Useful for vendoring the Datomic Free Edition as a submodule in your open source project.
 
 ```
-$ git submodule add https://github.com/josh/datomic-free.git vendor/datomic
+$ git submodule add -b latest https://github.com/josh/datomic-free.git vendor/datomic
 ```
