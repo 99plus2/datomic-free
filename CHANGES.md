@@ -2,6 +2,29 @@
 
 # Changes to Datomic
 
+## Changed in 0.8.3611
+
+* Peers now need to include the Datomic maven library in their
+  repositories listing. See
+  http://docs.datomic.com/integrating-peer-lib.html for details.
+
+* Added memory-index-max setting to allow higher throughput for
+  e.g. import jobs. See 
+  http://support.datomic.com/customer/portal/articles/850962-handling-high-write-volumes
+  for details.
+
+* Bugfix: Fixed bug that prevents indexing jobs from completing with
+  some usages of fulltext attributes.
+
+* Added additional AWS instance types to AMI setup scripts.
+
+* Bugfix: Cloudformation generation now respects
+  aws-autoscaling-group-size setting.
+
+* Fixed broken query example in GettingStarted.java.
+
+* Fixed docstring for datomic.api/with.
+
 ## Changed in 0.8.3599
 
 * Fixed "No suitable driver" error with dev: and free: protocols in

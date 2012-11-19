@@ -1,20 +1,14 @@
 // Copyright (c) Metadata Partners, LLC.
 // All rights reserved.
 
-// This file contains code examples for getting-started.html. They are
-// written in clojure, for use with Datomic's interactive repl. You can
-// start the repl by running 'bin/repl' from the datomic directory.
-// Once the repl is running, you can copy code into it or, if invoke it
-// directory from your editor, based on your configuration.
-
 /* 
  * To compile, from the top-level project directory
  *
- *    javac -cp datomic.jar:lib/* samples/seattle/getting-started.java
+ *    javac -cp `bin/classpath` samples/seattle/GettingStarted.java
  *
  * To run:
  *
- *    java -cp datomic.jar:lib/*:tools/*:samples/seattle GettingStarted
+ *    java -cp `bin/classpath`:samples/seattle GettingStarted
  */
 
 import java.util.ArrayList;
@@ -487,7 +481,7 @@ public class GettingStarted {
 	    System.out.println("Poll queue for transaction notification, print data that was added...");
 
 	    report = (Map) queue.poll();
-	    results = Peer.q("[:find ?e ?aname ?v ?added" +
+	    results = Peer.q("[:find ?e ?aname ?v ?added " +
 			     ":in $ [[?e ?a ?v _ ?added]] " +
 			     ":where " +
 			     "[?e ?a ?v _ ?added]" +
@@ -498,6 +492,7 @@ public class GettingStarted {
 	}
 	catch (Exception e) {
 	    e.printStackTrace();
+            System.exit(-1);
 	}
     }
     

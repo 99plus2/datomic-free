@@ -11,7 +11,7 @@
  <groupId>com.datomic</groupId>
  <artifactId>datomic-free</artifactId>
  <name>datomic-free</name>
- <version>0.8.3599</version>
+ <version>0.8.3611</version>
  <organization>
   <name>Metadata Partners, LLC</name>
   <url>http://datomic.com</url>
@@ -29,6 +29,11 @@
    <groupId>org.clojure</groupId>
    <artifactId>data.json</artifactId>
    <version>0.1.2</version>
+  </dependency>
+  <dependency>
+   <groupId>org.fressian</groupId>
+   <artifactId>fressian</artifactId>
+   <version>0.6.2</version>
   </dependency>
   <dependency>
    <groupId>org.slf4j</groupId>
@@ -329,6 +334,16 @@
    </releases>
    <snapshots>
     <enabled>true</enabled>
+   </snapshots>
+  </repository>
+  <repository>
+   <id>datomic</id>
+   <url>http://files.datomic.com/maven</url>
+   <releases>
+    <enabled>true</enabled>
+   </releases>
+   <snapshots>
+    <enabled>false</enabled>
    </snapshots>
   </repository>
   <repository>
