@@ -2,11 +2,18 @@
 
 # Changes to Datomic
 
-## Changed in 0.8.3611
+## Changed in 0.8.3619
 
-* Peers now need to include the Datomic maven library in their
-  repositories listing. See
-  http://docs.datomic.com/integrating-peer-lib.html for details.
+* Alpha release of Database.filter, which returns a value of the
+  database filtered to contain only the datoms satisfying a predicate.
+
+* New AWS metric: IndexWrites.
+
+* Peers no longer need to include a Datomic-specific maven repository,
+  as Fressian (http://fressian.org) is now available from Maven
+  Central and clojars.
+
+## Changed in 0.8.3611
 
 * Added memory-index-max setting to allow higher throughput for
   e.g. import jobs. See 
